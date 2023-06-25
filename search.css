@@ -1,0 +1,474 @@
+:root{
+    --light-orange: rgba(255,195,106,0.4); /* Used as background of top navbar, and as inactive button background */
+    --background: rgba(160,115,36,0.3); /* Main page background */
+    --description-orange: rgb(238, 184, 105); /* Colour of text in description of recipe on front page */
+    --orange: #FF9800; /* Colour of welcome header and other text */
+    --light-grey: #9E9E9E; /* text colour for search bar */
+    --off-white: #F5F5F5; /* search bar background */
+    --grey: #BDBDBD; /* Border colour of search bar */
+    --grey-transparent: rgba(200,200,200,0.4); /* background colour of ingredients box on recipes */
+    --text-black: #424242;
+    --mid-orange: rgba(255,152,0,0.2); /* background of login button on landing page */
+    --brown: #A76300; /* recipe title colour */
+    --mint-green: #c7ebd1;
+  }
+
+  body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(251, 241, 229);
+    font-weight: 300;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+  }
+
+#NavTop{
+    display: grid;
+    grid-template-columns:2fr 12fr 6fr 28fr 6fr 10fr 2fr;
+    grid-template-areas: ". login . search . logo .";
+    width: 100%;
+    height: 88px;
+    background: var(--light-orange);
+    border: none;
+    box-shadow: 0 5px 5px -5px #333;
+}
+
+  #Hamburger{
+    grid-area: ham;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 40%;
+    font-family: 'Source Sans Pro';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  #Login {
+    grid-area: login;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50%;
+    color: var(--text-black);
+    font-family: 'Source Sans Pro';
+    font-size: 0.8vw;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    background: var(--mid-orange);
+    border: 3px solid var(--orange);
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  .dropbutton {
+    background-color: var(--orange);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-style: bold;
+    font-weight: 200;
+    border-radius: 30px;
+    border: 3px solid var(--orange);
+  }
+
+  .Username {
+    position: absolute;
+    left: 80px;
+    top: 20px;
+    display: inline-block;
+  }
+
+  .drop-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--off-white);
+    min-width: 20rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* styles for links for menu */
+  .drop-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: grid;
+  }
+
+  .drop-menu-LoggedIn {
+    display: none;
+    position: absolute;
+    background-color: var(--off-white);
+    min-width: 20rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* styles for links for menu when logged in */
+  .drop-menu-LoggedIn a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: grid;
+  }
+
+  /* links change colour when hovering */
+  .drop-menu a:hover {background-color: darkgrey;}
+  .drop-menu-LoggedIn a:hover {background-color: darkgrey;}
+
+  /* Shows drop down menu whenn hovering on button */
+  #Login:hover .drop-menu, #Login:hover .drop-menu-LoggedIn  {
+    display: block;
+    position: absolute;
+  }
+  /* links change colour when hovering */
+
+  /* .drop-menu-LoggedIn a:hover {background-color: var(--light-grey);} */
+
+  /* Shows drop down menu whenn hovering on button */
+
+  /*
+  #Login:hover .drop-menu-LoggedIn {
+    display: block;
+    position: absolute;
+  }
+  */
+
+  /* change bg colour of button when menu shows */
+  #Login:hover . {background-color: var(--light-orange);}
+
+  .user-icon{
+    grid-area: auto;
+    margin: auto;
+    margin-left: 50%;
+    padding: auto;
+    height: 50%;
+  }
+
+  .user-name{
+    grid-area: auto;
+    font-family: "Oswald";
+    font-weight: 500;
+    font-size: 1vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: auto;
+  }
+
+  .chevron-login{
+    grid-area: auto;
+    margin: auto;
+    margin-right: 100%;
+    padding: auto;
+    height: 50%;
+  }
+
+  #SearchBox {
+    grid-area: search;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 30%;
+    color: var(--light-grey);
+    font-family: 'Source Sans Pro';
+    font-size: 1.2vw;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+    padding: 10px;
+    background: var(--off-white);
+    border: 1px solid var(--grey);
+    border-radius: 50px;
+  }
+
+  #Logo{
+    grid-area: logo;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+  }
+
+  .Logo{
+    height: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+
+  .NavMid {
+    margin: auto;
+    text-align: center;
+    min-width: 60vw;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    overflow: hidden;
+  }
+
+  .NavMid button {
+    grid-area: auto;
+    background-color: white;
+    color: var(--orange);
+    font-family: "Oswald";
+    font-weight: 500;
+    font-size: 16px;
+    border: 2px solid var(--orange);
+    transition: 0.3s;
+  }
+
+  /* Change background color of buttons on hover */
+  .NavMid button:hover {
+    color: white;
+    background-color: var(--orange);
+    cursor: pointer;
+  }
+
+  /* Create an active/current tablink class */
+  .NavMid button.used {
+    background-color: var(--orange);
+    color: white;
+    overflow: hidden;
+  }
+
+  /* Style the tab content */
+  .sectioncontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+
+  @media (min-width: 961px) {
+    .sectioncontent{ grid-template-columns: 1fr 1fr;}
+  }
+
+  @media (max-width: 960px) {
+    .sectioncontent{ grid-template-columns: 1fr;}
+  }
+
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .postthumbnail{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 10% 15% 10% 15%;
+  }
+
+  .postthumbnail img{
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow:0px 0px 5px 4px rgba(133,79,0,1);
+    cursor: pointer;
+  }
+
+  .postthumbnail h3{
+    color: var(--brown);
+    font-family: "Oswald";
+    font-size: 3vw;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+    margin: 1% 0% 0% 0%;
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  .postthumbnail p{
+    color: var(--description-orange);
+    font-family: "Oswald";
+    font-size: 0.9vw;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+  }
+
+  #PostContent{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin: 0% 7% 0% 7%;
+  }
+
+  #Identifiers{
+    display: flex;
+    float: left;
+    margin: 15px 0 15px 0;
+  }
+
+  #Identifiers h1{
+    font-family: "Oswald", sans-serif;
+    color: var(--brown);
+    font-size: 5vw;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    margin: 0 0 0 15px;
+  }
+
+  #Identifiers img{
+    aspect-ratio: 16/9;
+    width: 40vw;
+    margin: 15px 0% 15px 0%;
+  }
+
+  .postusername{
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1vw;
+  }
+
+  .postdate{
+    font-size: 1vw;
+  }
+
+  #Tags{
+    display: flex;
+    float: left;
+    width: fit-content;
+  }
+
+  #Tags > button{
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 0.7vw;
+    background-color: white;
+    white-space: pre;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0% 5% 0% 0%;
+  }
+
+  #Ingredients{
+    border: 1px solid black;
+    background-color: var(--grey-transparent);
+    padding: 2px 0px 2px 5px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  /* check if phone */
+  @media all and (any-pointer: coarse){
+      .sectioncontent{ grid-template-columns: 1fr; }
+      .postthumbnail h3{
+        font-size: 10vw;
+      }
+      .postthumbnail p{
+        font-size: 5vw;
+      }
+      .NavMid{
+        width: 90vw;
+      }
+      .NavMid button{
+        font-size: 3.5vw;
+      }
+      #Header{
+        font-size: 20vw;
+      }
+  }
+
+
+
+  /* size of star image */
+  .common_sp_caption_rv_star {vertical-align:1px;}
+  .common_sp_caption_rv_star img {width: 14px; margin-right: 1px; margin: 0;}
+
+  /* style of list */
+  li {
+    list-style-type: none;
+  }
+
+  /* order the image */
+  .common_sp_list_li {list-style:none; padding: 0; margin: 0 12px 40px 0; display: inline-block; vertical-align: top; position: relative;}
+
+  .pagination {
+      display:inline-block;
+      padding-left:0;
+      margin:30px 0;
+      border-radius:0;
+  }
+  .pagination>li {
+      display:inline
+  }
+  .pagination>li>a, .pagination>li>span {
+      position:relative;
+      float:left;
+      padding:9px 15px;
+      margin:0 3px;
+      line-height:1.42857143;
+      color:#888;
+      text-decoration:none;
+      background-color:#fff;
+      border:1px solid #ebebeb;
+      border-radius:0;
+  }
+
+  .pagination>li:first-child>a, .pagination>li:first-child>span {
+  }
+  .pagination>li:last-child>a, .pagination>li:last-child>span {
+  }
+  .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+  }
+  .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+      z-index:2;
+      color:#ff5e5e;
+      cursor:default;
+      background-color:#fff;
+      border-color:#ebebeb;
+      font-weight: 600;
+  }
+  .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+      color:#777;
+      cursor:not-allowed;
+      background-color:#fff;
+      border-color:#ddd
+  }
+  .pagination-lg>li>a, .pagination-lg>li>span {
+      padding:10px 16px;
+      font-size:16px
+  }
+  .pagination-lg>li:first-child>a, .pagination-lg>li:first-child>span {
+      border-top-left-radius:0;
+      border-bottom-left-radius:0
+  }
+  .pagination-lg>li:last-child>a, .pagination-lg>li:last-child>span {
+      border-top-right-radius:0;
+      border-bottom-right-radius:0
+  }
+  .pagination-sm>li>a, .pagination-sm>li>span {
+      padding:5px 10px;
+      font-size:12px
+  }
+  .pagination-sm>li:first-child>a, .pagination-sm>li:first-child>span {
+      border-top-left-radius:3px;
+      border-bottom-left-radius:3px
+  }
+  .pagination-sm>li:last-child>a, .pagination-sm>li:last-child>span {
+      border-top-right-radius:3px;
+      border-bottom-right-radius:3px
+  }
+
+  a:active, a:hover {
+      outline:0
+  }

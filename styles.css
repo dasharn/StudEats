@@ -1,0 +1,718 @@
+:root{
+  --light-orange: rgba(255,195,106,0.4); /* Used as background of top navbar, and as inactive button background */
+  --background: rgba(160,115,36,0.3); /* Main page background */
+  --description-orange: rgb(238, 184, 105); /* Colour of text in description of recipe on front page */
+  --orange: #FF9800; /* Colour of welcome header and other text */
+  --light-grey: #9E9E9E; /* text colour for search bar */
+  --off-white: #F5F5F5; /* search bar background */
+  --grey: #BDBDBD; /* Border colour of search bar */
+  --grey-transparent: rgba(200,200,200,0.4); /* background colour of ingredients box on recipes */
+  --text-black: #424242;
+  --mid-orange: rgba(255,152,0,0.2); /* background of login button on landing page */
+  --brown: #A76300; /* recipe title colour */
+  --mint-green: #c7ebd1;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+#NavTop{
+  display: grid;
+  grid-template-columns:2fr 12fr 6fr 28fr 6fr 10fr 2fr;
+  grid-template-areas: ". login . search . logo .";
+  width: 100%;
+  height: 88px;
+  background: var(--light-orange);
+  border: none;
+  box-shadow: 0 5px 5px -5px #333;
+}
+
+#Hamburger{
+  grid-area: ham;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 40%;
+  font-family: 'Source Sans Pro';
+  font-size: 30px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#Login {
+  grid-area: login;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 50%;
+  color: var(--text-black);
+  font-family: 'Source Sans Pro';
+  font-size: 0.8vw;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  background: var(--mid-orange);
+  border: 3px solid var(--orange);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.dropbutton {
+  background-color: var(--orange);
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  font-style: bold;
+  font-weight: 200;
+  border-radius: 30px;
+  border: 3px solid var(--orange);
+}
+
+.Username {
+  position: absolute;
+  left: 80px;
+  top: 20px;
+  display: inline-block;
+}
+
+.drop-menu {
+  display: none;
+  position: absolute;
+  background-color: var(--off-white);
+  min-width: 20rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* styles for links for menu */
+.drop-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: grid;
+}
+
+.drop-menu-LoggedIn {
+  display: none;
+  position: absolute;
+  background-color: var(--off-white);
+  min-width: 20rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* styles for links for menu when logged in */
+.drop-menu-LoggedIn a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: grid;
+}
+
+/* links change colour when hovering */
+.drop-menu a:hover {background-color: darkgrey;}
+.drop-menu-LoggedIn a:hover {background-color: darkgrey;}
+
+/* Shows drop down menu whenn hovering on button */
+#Login:hover .drop-menu, #Login:hover .drop-menu-LoggedIn  {
+  display: block;
+  position: absolute;
+}
+
+/* links change colour when hovering */
+
+/* .drop-menu-LoggedIn a:hover {background-color: var(--light-grey);} */
+
+/* Shows drop down menu whenn hovering on button */
+
+/*
+#Login:hover .drop-menu-LoggedIn {
+  display: block;
+  position: absolute;
+}
+*/
+
+/* change bg colour of button when menu shows */
+#Login:hover . {background-color: var(--light-orange);}
+
+.user-icon{
+  grid-area: auto;
+  margin: auto;
+  margin-left: 50%;
+  padding: auto;
+  height: 50%;
+}
+
+.user-name{
+  grid-area: auto;
+  font-family: "Oswald";
+  font-weight: 500;
+  font-size: 1vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: auto;
+}
+
+.chevron-login{
+  grid-area: auto;
+  margin: auto;
+  margin-right: 100%;
+  padding: auto;
+  height: 50%;
+}
+
+#SearchBox {
+  grid-area: search;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 30%;
+  color: var(--light-grey);
+  font-family: 'Source Sans Pro';
+  font-size: 1.2vw;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  padding: 10px;
+  background: var(--off-white);
+  border: 1px solid var(--grey);
+  border-radius: 50px;
+}
+
+#Logo{
+  grid-area: logo;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+
+.Logo{
+  height: 70%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#Header{
+  font-family: "Oswald", sans-serif;
+  color: var(--orange);
+  font-size: 4.5vw;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.NavMid {
+  margin: auto;
+  text-align: center;
+  min-width: 60vw;
+  width: 50vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  overflow: hidden;
+}
+
+.NavMid button {
+  grid-area: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: var(--light-orange);
+  color: var(--orange);
+  font-family: "Oswald";
+  font-weight: 500;
+  font-size: 1.2vw;
+  border: 2px solid var(--orange);
+  border-radius: 50px;
+  padding: auto;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.NavMid button:hover {
+  color: white;
+  background-color: var(--orange);
+  cursor: pointer;
+}
+
+/* Create an active/current tablink class */
+.NavMid button.used {
+  background-color: var(--orange);
+  color: white;
+  overflow: hidden;
+}
+
+/* Style the tab content */
+.sectioncontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+#Section2 .sectioncontent{
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 961px) {
+  #Section1.sectioncontent{ grid-template-columns: 1fr 1fr;}
+}
+
+@media (max-width: 960px) {
+  .sectioncontent{ grid-template-columns: 1fr;}
+}
+
+#Section2 .comingSoon {
+  text-align: center;
+  color: var(--orange);
+  font-size: 5rem;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.postthumbnail{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  margin: 10% 15% 10% 15%;
+}
+
+.postthumbnail img{
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow:0px 0px 5px 4px rgba(133,79,0,1);
+  cursor: pointer;
+}
+
+.postthumbnail h3{
+  color: var(--brown);
+  font-family: "Oswald";
+  font-size: 3vw;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  margin: 1% 0% 0% 0%;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.postthumbnail p{
+  color: var(--description-orange);
+  font-family: "Oswald";
+  font-size: 0.9vw;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+}
+
+#PostContent{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  margin: 0% 7% 0% 7%;
+}
+
+#Identifiers{
+  display: flex;
+  float: left;
+  margin: 15px 0 15px 0;
+}
+
+#Identifiers h1{
+  font-family: "Oswald", sans-serif;
+  color: var(--brown);
+  font-size: 5rem;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  margin: 0 0 0 15px;
+}
+
+#Identifiers img{
+  aspect-ratio: 16/9;
+  width: 40vw;
+  margin: 15px 0% 15px 0%;
+}
+
+.postdetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.postusername{
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 2rem;
+}
+
+.postdate{
+  font-size: 1vw;
+}
+
+#Tags{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 75%;
+  margin: 15px 0 0 15px;
+}
+
+#Tags > i{
+  grid-area: auto;
+  font-size: 1.5rem;
+  white-space: pre;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0% 5% 0% 0%;
+}
+
+#Ingredients{
+  border: 1px solid black;
+  background-color: var(--grey-transparent);
+  padding: 2px 0px 2px 5px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* check if phone */
+@media all and (any-pointer: coarse){
+    .sectioncontent{ grid-template-columns: 1fr; }
+    .postthumbnail h3{
+      font-size: 10vw;
+    }
+    .postthumbnail p{
+      font-size: 5vw;
+    }
+    .NavMid{
+      width: 90vw;
+    }
+    .NavMid button{
+      font-size: 3.5vw;
+    }
+    #Header{
+      font-size: 20vw;
+    }
+}
+
+
+/*Css for profile page below*/
+.profile-left::after{
+  content: "";
+  background-color: grey;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 1px;
+  height: 50%;
+  border: 1px solid grey;
+  display: block;
+}
+
+.profile-head{
+  font-size: 2.5vw;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -1rem;
+  margin-top: 1rem;
+}
+
+.profile-name{
+  font-family: "Oswald", sans-serif;
+  color: var(--orange);
+  font-size: 3vw;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.user-icon-profile{
+  margin-right: 1rem;
+}
+
+.profile-content{
+  display: flex;
+  width: 100%;
+  height: 54%;
+}
+
+.profile-left{
+  width: 50%;
+  overflow-y: scroll;
+}
+
+.profile-right{
+  width: 50%;
+  overflow: hidden;
+}
+
+.profile-section-header{
+  color: var(--orange);
+  display: flex;
+  margin-top: 0;
+  height: 15%;
+  text-decoration: underline;
+  text-align: center;
+  width: 100%;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.recipe-profile{
+  display: grid;
+  grid-template: 10vh 10vh 5vh 10vh / 30% 50% 20%;
+  grid-template-areas: "a t ."
+                       "a d b"
+                       "a d b"
+                       "r . .";/*a is img, r is rating, t is title, d is decription, b is delete button, 0 is empty*/
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
+}
+
+.recipe-profile .image-recipe-profile{
+  grid-area: a;
+  background: url('images/foodplaceholder.jpg') no-repeat;
+  background-size: cover;
+  margin: 1%;
+}
+
+.recipe-profile h4{
+  grid-area: t;
+  margin: 0;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+  padding-top: 0.1rem;
+  text-decoration: underline;
+}
+
+.recipe-profile p{
+  grid-area: d;
+  margin: 1%;
+  padding-left: 1%;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: rgba(200,200,200,0.5);
+}
+
+.recipe-profile .rating{
+  grid-area: r;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.recipe-profile button{
+  grid-area: b;
+  color: white;
+  font-weight: bold;
+  width: 60%;
+  height: 30%;
+  border: none;
+  border-radius: 50px;
+  background-color: red;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 30%;
+  cursor: pointer;
+}
+
+/* .profile-right{
+  display: flex;
+  flex-direction: column;
+} */
+
+.settings-rating{
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.settings-textbox{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  padding-left: 1%;
+  height: 3rem;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: rgba(200,200,200,0.5);
+  justify: center;
+}
+
+.settings-textbox-edit{
+  margin-left: 5%;
+  margin-right: 20%;
+  margin-bottom: 2%;
+  padding-left: 1%;
+  height: 3rem;
+  width: 43rem;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: rgba(200,200,200,0.5);
+  justify: center;
+  display: inline-block;
+}
+
+.settings-textbox p{
+  margin-top: 2%;
+  margin-left: 1.5%;
+  margin-bottom: 2%;
+}
+
+#edit-profile, #view-profile{
+  color: white;
+  background-color: grey;
+  font-weight: bold;
+  font-size: 0.9rem;
+  height: 3rem;
+  width: 8rem;
+  text-align: center;
+  align-self: center;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.edit-wrapper{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+  width: 60%;
+}
+
+#right-edit h4{
+  margin-left: 5%;
+  text-decoration: underline;
+}
+
+.edit-nav{
+  text-align: center;
+}
+
+.edit-links{
+  margin-right: 5%;
+  color: white;
+  background-color: grey;
+  font-weight: bold;
+  font-size: 0.9rem;
+  height: 2rem;
+  width: 6rem;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.edit-nav button.used {
+  background-color: lightgrey;
+  color: black;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.edit-wrapper input{
+  margin-top: 2%;
+  height: 2rem;
+}
+
+.right-edit-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target{
+  visibility: visible;
+  opacity: 1;
+}
+
+.wrapper{
+  margin: 70px auto;
+  padding: 20px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+}
+
+.wrapper h3{
+  margin-top: 0;
+  color: #9E9E9E;
+}
+
+.wrapper .close{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(231, 158, 21);
+}
+
+.wrapper .content{
+  overflow: auto;
+}
+
+.editButton{
+  text-align: center;
+  font-size: 1em;
+  padding: 10px 25px;
+  color: rgb(180, 105, 43);
+  cursor: pointer;
+  background: #333;
+  border-radius: 10px;
+  margin-left: 90%;
+}
+
+.editButtonDiv{
+  display: inline-block;
+  width: 52rem;
+  position: relative;
+  top : -45;
+}

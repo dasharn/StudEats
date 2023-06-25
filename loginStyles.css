@@ -1,0 +1,160 @@
+:root{
+  --light-orange: rgba(255,195,106,0.5);
+  --background: rgba(160,115,36,0.3);
+  --description-orange: rgb(255, 195, 106);
+  --orange: #FF9800;
+  --light-grey: #9E9E9E;
+  --off-white: #F5F5F5; /*Used for text colour on titles */
+  --grey: #BDBDBD;
+  --grey-transparent: rgba(200,200,200,0.85); /* Different opacity to main stylesheet, used for background of login and signup box */
+  --grey-transparent-logo: rgba(200,200,200,0.95); /* Different opacity to main stylesheet, used for background of login and signup box */
+  --text-black: #424242;
+  --mid-orange: rgba(255,152,0,0.2);
+  --brown: #A76300;
+  --mint-green: #c7ebd1;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.backgroundContainer{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url("images/login/bg1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: backgroundChange;
+  animation-duration: 66s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes backgroundChange {
+  0%{
+    background-image: url("images/login/bg1.jpg");
+  }
+  10%{
+    background-image: url("images/login/bg2.jpg");
+  }
+  20%{
+    background-image: url("images/login/bg3.jpg");
+  }
+  30%{
+    background-image: url("images/login/bg4.jpg");
+  }
+  40%{
+    background-image: url("images/login/bg5.jpg");
+  }
+  50%{
+    background-image: url("images/login/bg6.jpg");
+  }
+  60%{
+    background-image: url("images/login/bg7.jpg");
+  }
+  70%{
+    background-image: url("images/login/bg8.jpg");
+  }
+  80%{
+    background-image: url("images/login/bg9.jpg");
+  }
+  90%{
+    background-image: url("images/login/bg10.jpg");
+  }
+  100%{
+    background-image: url("images/login/bg11.jpg");
+  }
+}
+
+#logo {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  top: 0px;
+  right: 0px;
+  margin: 1%;
+  width: 15%;
+  background-color: var(--grey-transparent-logo);
+}
+
+#logo img{
+  width: 100%;
+  height: auto;
+}
+
+.foregroundContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  gap: 20%;
+  width: 50%;
+}
+
+.submitButtons{
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+
+.inputBoxes{
+  min-width: 100%;
+  min-height: 40%;
+}
+
+#loginButtonBack{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  height: 40%;
+  min-height: 220px;
+  background-color: var(--grey-transparent);
+  border: 2px solid var(--orange);
+  border-radius: 10px;
+}
+
+#loginButtonBack h2 {
+  font-size: 1.6em;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: var(--off-white);
+}
+
+#signupButtonBack h2 {
+  font-size: 1.6em;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: var(--off-white);
+}
+
+#signupButtonBack{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  height: 50%;
+  min-height: 300px;
+  min-width: 220px;
+  background-color: var(--grey-transparent);
+  border: 2px solid var(--orange);
+  border-radius: 10px;
+}
